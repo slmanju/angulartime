@@ -1,4 +1,5 @@
 <div class="row">
+    <mat-spinner *ngIf="!news"></mat-spinner>
   <div class="categories container d-flex justify-content-center">
       <mat-chip-list>
           <mat-chip *ngFor="let category of categories"
@@ -21,3 +22,4 @@
       </mat-card>
     </div>
 </div>
+

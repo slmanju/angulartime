@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   news: any; //new Array(20);
   newsSubscription;
 
+  length;
+  pageSize = 8;
+  page = 1;
+
   constructor(private newsService: NewsService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
@@ -22,9 +26,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getData() {
-    this.newsSubscription = this.newsService.getData('top-headlines?country=us').subscribe(data => {
-      console.log(data);
+    this.newsSubscription = this.newsService
+    .getData(`top-headlines?country=us&pageSize=${this.pageSize}&page=${this.page}`)
+    .subscribe(data => {
       this.news = data;
+      this.length = data['totalResults'];
     });
   }
 
@@ -39,6 +45,15 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.snackBar.open('Favorite Added', 'Ok', {
       duration: 2000
+    });
+  }
+
+  onPageChange(event) {
+    this.newsSubscription = this.newsService
+    .getData(`top-headlines?country=us&pageSize=${this.pageSize}&page=${event.pageIndex + 1}`)
+    .subscribe(data => {
+      this.news = data;
+      this.length = data['totalResults'];
     });
   }
 

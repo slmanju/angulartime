@@ -1,0 +1,26 @@
+<div>
+  <form #messageForm="ngForm" (ngSubmit)="submitForm(messageForm.value)">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username" 
+            [(ngModel)]="messageModel.username" 
+            required #username="ngModel">
+      <div [hidden]="username.valid || username.pristine">
+        Username is required
+      </div>
+    </div>
+
+    <div>
+      <label>Message:</label>
+      <input type="text" name="message" [(ngModel)]="messageModel.message">
+    </div>
+
+    <button type="submit" [disabled]="!messageForm.form.valid">Submit</button>
+  </form>
+</div>
+<hr/>
+<div>
+  {{values}}
+</div>
+
+<router-outlet></router-outlet>

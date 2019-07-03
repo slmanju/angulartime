@@ -2,23 +2,22 @@
   <form #messageForm="ngForm" (ngSubmit)="submitForm(messageForm.value)">
     <div>
       <label>Username:</label>
-      <input type="text" name="username" 
-            [(ngModel)]="messageModel.username" 
-            required #username="ngModel">
+      <input type="text" name="username" [(ngModel)]="messageModel.username" required #username="ngModel">
       <div [hidden]="username.valid || username.pristine">
         Username is required
       </div>
     </div>
-
     <div>
       <label>Message:</label>
-      <input type="text" name="message" [(ngModel)]="messageModel.message">
+      <input type="text" name="message" [(ngModel)]="messageModel.message" required #message="ngModel">
+      <div [hidden]="message.valid || message.pristine">
+        Message is required
+      </div>
     </div>
-
     <button type="submit" [disabled]="!messageForm.form.valid">Submit</button>
   </form>
 </div>
-<hr/>
+<hr />
 <div>
   {{values}}
 </div>

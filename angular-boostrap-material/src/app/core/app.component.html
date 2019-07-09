@@ -1,10 +1,37 @@
 <div class="site">
     <div class="site-content">
-        <nav></nav>
-        <div class="header"></div>
-        <main>
+        <div class="container">
+            <nav class="navbar navbar-expand navbar-dark">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="active">
+                        <i class="d-none d-sm-inline-block fas fa-home mx-1"></i>Home</a>
+                    <a class="nav-item nav-link" [routerLink]="['/portfolio']" routerLinkActive="active">
+                        <i class="d-none d-sm-inline-block fas fa-images mx-1"></i>Portfolio</a>
+                    <a class="nav-item nav-link" [routerLink]="['/about']" routerLinkActive="active">
+                        <i class="d-none d-sm-inline-block fas fa-envelope mx-1"></i>About</a>
+                </div>
+            </nav>
+        </div>
+        <div class="header">
+            <div class="container">
+                <h1>Manjula Jayawardana</h1>
+                <h2>Developer</h2>
+            </div>
+        </div>
+        <main class="container">
             <router-outlet></router-outlet>
         </main>
     </div>
-    <footer></footer>
+    <footer class="footer container">
+        <div class="row">
+            <div><p>Copyright @ Manjula</p></div>
+            <div>
+                <ul class="social-icons float-right mt-3">
+                    <li><a class="fab fa-facebook"></a></li>
+                    <li><a class="fab fa-twitter"></a></li>
+                    <li><a class="fab fa-envelope-open-text"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </div>

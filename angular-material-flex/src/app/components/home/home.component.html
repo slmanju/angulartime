@@ -1,0 +1,20 @@
+<div fxFlex fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row wrap">
+    <div *ngFor="let item of items" fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" class="container">
+      <mat-card>
+        <img mat-card-image src="/assets/no-content.png" alt="" />
+        <mat-card-header>
+          <mat-card-title>Lorem, ipsum dolor.</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, sapiente?</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div fxLayoutAlign="end">
+          <button mat-raised-button color="primary">Read More</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

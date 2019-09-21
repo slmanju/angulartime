@@ -1,15 +1,18 @@
-table, th, td {
-    border: 1px solid black;
+table {
+    font-family: arial, sans-serif;
     border-collapse: collapse;
-}
-
-th, td {
-    padding: 5px;
-}
-
-th {
+    width: 100%;
+  }
+  
+  td, th {
+    border: 2px solid whitesmoke;
     text-align: left;
-}
+    padding: 15px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: whitesmoke;
+  }
 
 .cart-items {
     margin: 10px;

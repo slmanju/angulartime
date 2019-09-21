@@ -1,0 +1,37 @@
+ng new book-care --routing=true --style=scss
+ng add @angular/flex-layout @angular/cdk
+ng add @angular/material @angular/cdk @angular/animations
+
+ 2001  ng generate module modules/material --dry-run
+ 2002  ng generate module modules/material
+ 2003  ng g c components/home --dry-run
+ 2004  ng g c components/home
+ 2005  ng g c components/about
+ 2006  ng g c components/book/addbook --dry-run
+ 2007  ng g c components/book/addbook
+ 2008  ng g c components/book/viewbook
+ 2009  ng g c components/book/books
+ng generate service services/book/book
+
+ 2003  ng g c components/home --dry-run
+ 2004  ng g c components/home
+ 2005  ng g c components/about
+ 2006  ng g c components/book/addbook --dry-run
+ 2007  ng g c components/book/addbook
+ 2008  ng g c components/book/viewbook
+ 2009  ng g c components/book/books
+ 2010  clear
+ 2011  history
+ 2012  ng g c components/menu --dry-run
+ 2013  ng g c components/menu
+ 2014  ng generate service services/bookservice --dry-run
+ 2015  ng generate service services/bookservice
+ 2016  ng generate service services/localstorageservice
+ 2017  ng generate service services/cartservice
+ 2018  ng generate service services/cart/cart --dry-run
+ 2019  ng generate service services/cart/cart
+ 2020  ng generate service services/book/book
+ 2021  ng generate service services/storage/storage
+
+
+

@@ -1,0 +1,32 @@
+<div class="cart-add">
+    <mat-card>
+        <mat-card-title>Buy Book</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="cartAddForm" (ngSubmit)="onBookAdd()" fxLayout="row">
+                <mat-form-field class="app-form-field">
+                    <mat-label>Book</mat-label>
+                    <mat-select formControlName="book">
+                        <mat-option *ngFor="let book of books" [value]="book">
+                            {{ book.title }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="app-form-field">
+                    <mat-label>Quantity</mat-label>
+                    <input type="number"
+                            min="1"
+                            matInput 
+                            placeholder="Quantity" 
+                            formControlName="quantity">
+                </mat-form-field>
+
+                <div class="button">
+                    <button type="submit"
+                        mat-raised-button 
+                        color="primary">Add</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

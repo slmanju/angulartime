@@ -1,0 +1,57 @@
+<div class="book-form">
+    <mat-card>
+        <mat-card-title>Add Book</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <input type="text" 
+                            matInput 
+                            placeholder="Title" 
+                            formControlName="title">
+                </mat-form-field>
+                <div *ngIf="title.invalid && (title.dirty || title.touched)">
+                    <div *ngIf="title.errors.required">
+                        Title is required.
+                    </div>
+                </div>
+
+                <mat-form-field>
+                    <input type="text" 
+                            matInput 
+                            placeholder="Author" 
+                            formControlName="author">
+                </mat-form-field>
+                <div *ngIf="author.invalid && (author.dirty || author.touched)">
+                    <div *ngIf="author.errors.required">
+                        Author is required.
+                    </div>
+                </div>
+
+                <mat-form-field>
+                    <textarea rows="4" cols="50"
+                    matInput 
+                    placeholder="Description" 
+                    formControlName="description"></textarea>
+                </mat-form-field>
+                <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                    <div *ngIf="description.errors.required">
+                        Description is required.
+                    </div>
+                    <div *ngIf="description.errors.minlength">
+                        Description must be at least 5 characters long.
+                    </div>
+                    <div *ngIf="description.errors.maxlength">
+                        Description must be less than 50 characters long.
+                    </div>
+                </div>
+
+                <div class="button">
+                    <button type="submit" 
+                        [disabled]="!bookForm.valid"
+                        mat-raised-button 
+                        color="primary">Save</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

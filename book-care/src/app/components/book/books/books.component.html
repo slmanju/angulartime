@@ -1,0 +1,27 @@
+<div fxFlex fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row wrap">
+    <div *ngFor="let book of books" 
+        fxFlex="20" 
+        fxFlex.md="25" 
+        fxFlex.sm="33" 
+        fxFlex.xs="50" 
+        fxLayout="column" 
+        class="container">
+      <mat-card>
+        <img mat-card-image src="/assets/angular3.png" alt="" />
+        <mat-card-header>
+          <mat-card-title>{{ book.title }} - {{ book.author }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ book.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div fxLayoutAlign="end">
+            <button mat-raised-button color="primary" (click)="onBuy(book)">Buy</button>
+            <button mat-raised-button color="primary">View</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="cart-items">
+    <mat-card>
+        <mat-card-content>
+            <div fxLayout="row nowrap">
+                <div fxFlex="0 1 calc(95%)">
+                    <table style="width:100%">
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Quantity</th>
+                        </tr>
+                        <tr *ngFor="let cartItem of cartItems">
+                            <td>{{ cartItem.book.title }}</td>
+                            <td>{{ cartItem.book.author }}</td>
+                            <td>{{ cartItem.quantity }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div fxLayout="column" class="buttons">
+                    <button mat-raised-button color="primary">Remove</button>
+                    <button mat-raised-button color="primary">Edit</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

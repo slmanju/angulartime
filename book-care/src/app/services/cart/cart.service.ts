@@ -26,4 +26,9 @@ export class CartService {
     return this.messageSource.asObservable(); // this.cartItems;
   }
 
+  clearCart() {
+    this.cartItems = [];
+    this.messageSource.next(this.cartItems);
+  }
+
 }

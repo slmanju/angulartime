@@ -23,4 +23,13 @@
             </div>
         </mat-card-content>
     </mat-card>
+
+    <mat-card class="actions">
+        <mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="end center" class="complete">
+                <button mat-raised-button color="primary" (click)="clearCart()">Clear Cart</button>
+                <button mat-raised-button color="primary" (click)="purchase()">Purchase</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

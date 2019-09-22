@@ -20,6 +20,7 @@ import { CartitemsComponent } from './components/cart/cartitems/cartitems.compon
 import { CartaddComponent } from './components/cart/cartadd/cartadd.component';
 import { CartareaComponent } from './components/cart/cartarea/cartarea.component';
 import { CartbillComponent } from './components/cart/cartbill/cartbill.component';
+import { ViewBooksComponent } from './components/book/view-books/view-books.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CartbillComponent } from './components/cart/cartbill/cartbill.component
     CartitemsComponent,
     CartaddComponent,
     CartareaComponent,
-    CartbillComponent
+    CartbillComponent,
+    ViewBooksComponent
   ],
   imports: [
     BrowserModule,

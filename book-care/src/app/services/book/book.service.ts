@@ -9,23 +9,31 @@ export class BookService {
 
   constructor() { 
     let savedBooks = JSON.parse(localStorage.getItem("books"));
-    // if (!savedBooks) {
+    if (!savedBooks) {
       savedBooks = this.initBooks();
-      localStorage.setItem("books", JSON.stringify(savedBooks));
-    // }
-    console.log(savedBooks);
+    }
     this.books = savedBooks;
+    this.store();
+  }
+
+  store() {
+    localStorage.setItem("books", JSON.stringify(this.books));
   }
 
   save(book) {
     book.id = new Date().getTime();
     book.image = "/assets/angular.png";
     this.books.push(book);
-    localStorage.setItem("books", JSON.stringify(this.books));
+    this.store();
   }
 
   getBooks() {
     return this.books;
+  }
+
+  deleteBook(book) {
+    this.books = this.books.filter(item => item.id !== book.id);
+    this.store();
   }
 
   initBooks() {

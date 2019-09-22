@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookService } from 'src/app/services/book/book.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-addbook',
@@ -12,7 +13,8 @@ export class AddbookComponent implements OnInit {
   bookForm : FormGroup;
 
   constructor(private formBuilder: FormBuilder, 
-              private bookService: BookService) {
+              private bookService: BookService,
+              private snackBar: MatSnackBar) {
     this.bookForm = formBuilder.group({
       title : ['', [ Validators.required ]],
       author : ['', [ Validators.required ]],
@@ -26,6 +28,8 @@ export class AddbookComponent implements OnInit {
 
   onSubmit() {
     this.bookService.save(this.bookForm.value);
+
+    this.openSnackBar();
   }
 
   get title() {
@@ -38,6 +42,12 @@ export class AddbookComponent implements OnInit {
 
   get description() {
     return this.bookForm.get("description");
+  }
+
+  openSnackBar() {
+    this.snackBar.open('Book saved', 'Ok', {
+      duration: 1000,
+    });
   }
 
 }

@@ -1,1 +1,11 @@
-<p>viewbook works!</p>
+<div class="book-view" fxLayout="row">
+    <div class="image" fxFlex="40%">
+        <img [src]="book.image" alt="" class="book-img" />
+    </div>
+    <div class="details" fxFlex="60%">
+        <p class="title">{{ book.title }}</p>
+        <p>{{ book.author }}</p>
+        <p>${{ book.price }}</p>
+        <p>{{ book.description }}</p>
+    </div>
+</div>

@@ -5,6 +5,7 @@ import { BooksComponent } from '../components/book/books/books.component';
 import { ViewbookComponent } from '../components/book/viewbook/viewbook.component';
 import { AddbookComponent } from '../components/book/addbook/addbook.component';
 import { CartareaComponent } from '../components/cart/cartarea/cartarea.component';
+import { ViewBooksComponent } from '../components/book/view-books/view-books.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'view-books',
-    component: AddbookComponent
+    component: ViewBooksComponent
   },
   {
     path: 'books',

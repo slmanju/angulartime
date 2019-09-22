@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book/book.service';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ViewbookComponent } from '../viewbook/viewbook.component';
 
 @Component({
   selector: 'app-books',
@@ -12,7 +14,8 @@ export class BooksComponent implements OnInit {
   books;
 
   constructor(private bookService: BookService,
-              private cartService: CartService) { }
+              private cartService: CartService,
+              private dialog: MatDialog) { }
 
   ngOnInit() {
     this.books = this.bookService.getBooks();
@@ -20,6 +23,15 @@ export class BooksComponent implements OnInit {
 
   onBuy(book) {
     this.cartService.addToCart(book, 1);
+  }
+
+  openDialog(book) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = book;
+
+    this.dialog.open(ViewbookComponent, dialogConfig);
   }
 
 }

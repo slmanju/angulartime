@@ -1,0 +1,33 @@
+<div class="books">
+    <mat-card>
+        <mat-card-content>
+            <table style="width:100%">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let book of books">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.price }}</td>
+                    <td>{{ book.description }}</td>
+                    <td>
+                        <button mat-raised-button 
+                            color="primary"
+                            (click)="openDialog(book)">View</button>&nbsp; 
+
+                        <button mat-raised-button 
+                            color="info">Edit</button>&nbsp;
+
+                        <button mat-raised-button 
+                            color="warn"
+                            (click)="deleteBook(book)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>

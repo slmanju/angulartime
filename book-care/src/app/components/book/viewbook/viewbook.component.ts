@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 
 @Component({
   selector: 'app-viewbook',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewbookComponent implements OnInit {
 
-  constructor() { }
+  book = {};
+
+  constructor(private dialogRef: MatDialogRef<ViewbookComponent>,
+              @Inject(MAT_DIALOG_DATA) data) {
+    this.book = data;
+  }
 
   ngOnInit() {
   }

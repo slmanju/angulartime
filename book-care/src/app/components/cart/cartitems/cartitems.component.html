@@ -9,7 +9,9 @@
                             <th>Author</th>
                             <th>Quantity</th>
                         </tr>
-                        <tr *ngFor="let cartItem of cartItems">
+                        <tr *ngFor="let cartItem of cartItems; let i = index" 
+                            [class.active]="i === selectedIndex"
+                            (click)="onRowSelect(cartItem, i)">
                             <td>{{ cartItem.book.title }}</td>
                             <td>{{ cartItem.book.author }}</td>
                             <td>{{ cartItem.quantity }}</td>
@@ -17,7 +19,7 @@
                     </table>
                 </div>
                 <div fxLayout="column" class="buttons">
-                    <button mat-raised-button color="primary">Remove</button>
+                    <button mat-raised-button color="primary" (click)="onRemove()">Remove</button>
                     <button mat-raised-button color="primary">Edit</button>
                 </div>
             </div>

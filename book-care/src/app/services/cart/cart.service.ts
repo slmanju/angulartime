@@ -13,13 +13,24 @@ export class CartService {
 
   constructor() { }
 
+  next() {
+    this.messageSource.next(this.cartItems);
+  }
+
   addToCart(book, quantity) {
     this.cartItems.push({
+      cartId: new Date().getTime(),
       book: book,
       quantity: quantity
     });
 
-    this.messageSource.next(this.cartItems);
+    this.next();
+  }
+
+  removeBook(cartItem) {
+    this.cartItems = this.cartItems.filter(item => (item.cartId !== cartItem.cartId));
+
+    this.next();
   }
 
   getCartItems() {
@@ -28,7 +39,7 @@ export class CartService {
 
   clearCart() {
     this.cartItems = [];
-    this.messageSource.next(this.cartItems);
+    this.next();
   }
 
 }

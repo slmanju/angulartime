@@ -7,11 +7,20 @@ table {
 td, th {
     border: 1px solid whitesmoke;
     text-align: left;
-    padding: 15px;
+    padding: 12px;
+}
+
+tr:hover {
+    cursor: pointer;
 }
 
 tr:nth-child(even) {
     background-color: whitesmoke;
+}
+
+.active {
+    background-color: #2196f3 !important;
+    color: white;
 }
 
 .cart-items {

@@ -16,6 +16,10 @@ const routes: Routes = [
     component: AddbookComponent
   },
   {
+    path: 'view-books',
+    component: AddbookComponent
+  },
+  {
     path: 'books',
     component: BooksComponent
   },

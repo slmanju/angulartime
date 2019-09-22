@@ -8,7 +8,7 @@
         fxLayout="column" 
         class="container">
       <mat-card>
-        <img mat-card-image src="/assets/angular.png" alt="" />
+        <img mat-card-image [src]="book.image" alt="" class="book-img" />
         <mat-card-header>
           <mat-card-title>{{ book.title }} - {{ book.author }}</mat-card-title>
         </mat-card-header>

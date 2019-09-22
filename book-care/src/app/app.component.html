@@ -13,7 +13,11 @@
           <a mat-button routerLink="/books">Books</a>
         </li>
         <li>
-          <a mat-button routerLink="/add-book">Add Book</a>
+          <button mat-button [matMenuTriggerFor]="menu">Admin</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/add-book">Add Book</button>
+            <button mat-menu-item routerLink="/view-books">View Books</button>
+          </mat-menu>
         </li>
       </ul>
     </div>
